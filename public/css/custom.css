@@ -1,0 +1,130 @@
+#credits_reset {
+  visibility: hidden;
+}
+
+#actions_left:hover #credits_reset {
+  visibility: visible;
+}
+
+/* 
+si on veut le même style d'élements de menus actifs 
+dans la page d'accueil (menu guest-navigation.blade.php pour la page avec le layout guest.blade.php)
+que dans les pages où on est connecté (menu navigation.blade.php pour les pages avec le layout app.blade.php)
+on doit avoir ci-dessous l'équivalent CSS (pour la page d'accueil) 
+de ce qu'on a dans nav-link.blade.php pour la prop $active (pour les pages connectées)
+*/
+
+.navigation__link.active2 { /* IMPORTANT : j'utilise ici "active2" au lieu de "active" pour éviter un conflit avec les 'dots' du slideshow montrant les packages disponibles (sur cell) */
+  color: rgb(17 24 39); /* text-gray-900 */
+  border-color: rgb(250 204 21); /* border-yellow-400 */
+}
+
+.navigation__link.active2:focus {
+  border-color: rgb(161 98 7); /* border-yellow-700 */
+}
+
+
+
+
+/*USED: tooltip at the bottom of the info button */
+.cred-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.cred-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 340px;
+  background-color: white;
+  color: #4b5563;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -180px;
+}
+
+.cred-tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.cred-tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+
+
+/*USED: tooltip for the flag button (save screenshot / report issue) */
+
+.report-issue .tooltiptext {
+  visibility: hidden;
+}
+
+.report-issue:hover #report-issue-button {
+  opacity: 100;
+}
+
+.report-issue:hover .tooltiptext {
+  visibility: visible;
+}
+
+.report-issue .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;  /* At the top of the tooltip */
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #9CA3AF;
+}
+
+
+
+
+
+/* NOT USED: tooltip at the right of the info button */
+.credentials-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.credentials-tooltip .tooltiptext {
+  visibility: hidden;
+  width: 110px;
+  background-color: white;
+  color: #4b5563; /* gray-600 */
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -40px;
+  left: 105%;
+}
+
+.credentials-tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+.credentials-tooltip:hover .tooltiptext {
+  visibility: visible;
+}
